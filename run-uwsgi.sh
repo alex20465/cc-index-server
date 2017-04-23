@@ -12,7 +12,7 @@ if [ $? -ne 0 ]; then
 fi
 
 mypath=$(cd `dirname $0` && pwd)
-
+cd $mypath
 params="$mypath/uwsgi.ini"
 
 uwsgi $params
