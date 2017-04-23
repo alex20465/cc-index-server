@@ -4,4 +4,10 @@ if [ ! -d "collections" ]; then
     mkdir collections
 fi
 
-s3cmd sync -r --exclude=* --include="cluster.idx" --include="metadata.yaml" s3://commoncrawl/cc-index/collections/ collections/ -vvv
+while read -r line
+do
+
+echo "Synchronize data $line";
+s3cmd sync -r --exclude=* --include="cluster.idx" --include="metadata.yaml" s3://commoncrawl/cc-index/collections/$line collections/
+
+done < indexes.txt
