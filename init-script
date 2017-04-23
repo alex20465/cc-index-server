@@ -1,6 +1,6 @@
 #!/bin/sh
 ### BEGIN INIT INFO
-# Provides:
+# Provides:          cc-index-server
 # Required-Start:    $remote_fs $syslog
 # Required-Stop:     $remote_fs $syslog
 # Default-Start:     2 3 4 5
@@ -8,6 +8,7 @@
 # Short-Description: Start daemon at boot time
 # Description:       Enable service provided by daemon.
 ### END INIT INFO
+
 
 dir=$(dirname "$(readlink -f "$0")")
 cmd="VIRTUAL_ENV=$dir/.venv $dir/run-uwsgi.sh"
